@@ -10,7 +10,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Alias
-alias src='cd ~/src/$1'
 alias desktop='cd ~/Desktop/$1'
 alias ls='ls -AlGfhgvo'
 
@@ -43,6 +42,20 @@ __git_feature() {
 alias feature=__git_feature
 complete -o default -o nospace -F _git g
 
+# cd
+## src
+_cdsrc() { cd $HOME/src/$@ ;}
+alias src=_cdsrc
+_completesrc () {
+  local srcdir=$HOME/src
+  local cur=${COMP_WORDS[$COMP_CWORD]}
+  local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+  COMPREPLY=( $( compgen -d $srcdir/$cur | sed "s|$HOME/src/||" ) )
+}
+complete -o default -o nospace -F _completesrc src
+
+# Local Only
 if [ -f ~/.profile ]; then
   source ~/.profile
 fi
