@@ -18,11 +18,12 @@ alias ramdisk='diskutil erasevolume HFS+ "RAMDisk" `hdiutil attach -nomount ram:
 
 # git
 ## Alias
+alias g='git'
 alias master='git checkout master'
 alias cleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 ## Completion
-if [ -f ~/.dotfiles/git/git-completion.sh ]; then
-  . .~/dotfiles/git/git-completion.sh
+if [ -f ~/.dotfiles/git/git-bash.sh ]; then
+  . ~/.dotfiles/git/git-bash.sh
 fi
 ## Command prompt with branch name
 export GIT_PS1_SHOWUPSTREAM="verbose"
@@ -40,6 +41,7 @@ __git_feature() {
   fi
 }
 alias feature=__git_feature
+complete -o default -o nospace -F _git g
 
 if [ -f ~/.profile ]; then
   source ~/.profile
