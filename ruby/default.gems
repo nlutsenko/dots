@@ -1,0 +1,7 @@
+# default.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+
+cocoapods -v0.39.0
+git-up -v0.5.12
+jazzy -v0.4.1
+rake -v10.4.2
+xcpretty -v0.2.1
