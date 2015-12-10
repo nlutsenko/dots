@@ -1,0 +1,8 @@
+- clean: ['~']
+- link:
+    ~/.bash_profile: bash_profile
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore
+    ~/.gemrc: gemrc
+- shell:
+  - [git submodule update --init --recursive, Installing submodules...]

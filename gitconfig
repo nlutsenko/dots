@@ -1,0 +1,41 @@
+[user]
+  name = Nikita Lutsenko
+  email = nlutsenko@me.com
+[core]
+  editor = mate -w
+  whitespace = trailing-space,space-before-tab
+  excludesfile = ~/.gitignore
+[mergetool]
+	keepBackup = true
+	prompt = false
+[color]
+	ui = auto
+[push]
+	default = current
+[alias]
+  di = difftool
+  s = status
+  l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --decorate --date=relative -n 50
+  ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --decorate --date=relative -n 30 --graph --all
+  feature = checkout -b
+  rename = branch -m
+  amend = commit --amend --reuse-message=HEAD
+[help]
+	autocorrect = 1
+[branch]
+	autosetuprebase = always
+[gc]
+	auto = 0
+[apply]
+  whitespace = fix
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
