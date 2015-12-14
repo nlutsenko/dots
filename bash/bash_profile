@@ -12,6 +12,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Alias
 alias desktop='cd ~/Desktop/$1'
 alias ls='ls -AlGfhgvo'
+alias pr='hub pr -o'
 
 alias ramdisk='diskutil erasevolume HFS+ "RAMDisk" `hdiutil attach -nomount ram://4718592`'
 
