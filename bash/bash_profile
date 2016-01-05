@@ -60,3 +60,5 @@ complete -o default -o nospace -F _completesrc src
 if [ -f ~/.profile ]; then
   source ~/.profile
 fi
+
+. ~/.dotfiles/bash/completion/common
