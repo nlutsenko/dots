@@ -62,3 +62,4 @@ if [ -f ~/.profile ]; then
 fi
 
 . ~/.dotfiles/bash/completion/common
+. ~/.dotfiles/bash/completion/rake
