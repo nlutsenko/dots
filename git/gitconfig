@@ -12,14 +12,25 @@
 	ui = auto
 [push]
 	default = current
+[pull]
+	rebase = true
 [alias]
-  di = difftool
+  # Status
   s = status
+  # Committing
+  amend = commit --amend --reuse-message=HEAD
+  cm = commit -m 
+  # Logging
   l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --decorate --date=relative -n 50
   ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --decorate --date=relative -n 30 --graph --all
+  # Branching
   feature = checkout -b
   rename = branch -m
-  amend = commit --amend --reuse-message=HEAD
+  # Rebasing
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbs = rebase --skip
 [help]
 	autocorrect = 1
 [branch]
@@ -39,3 +50,8 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+[rebase]
+	stat = true
+  autoStash = true
+[status]
+	submodulesummary = true
