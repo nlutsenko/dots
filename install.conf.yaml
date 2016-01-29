@@ -4,6 +4,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.gemrc: ruby/gemrc
+    ~/.swiftlint.yml: swiftlint.yml
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
   - [~/.dotfiles/osx.sh, Updating OS X preferences...]
