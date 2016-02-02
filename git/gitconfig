@@ -15,6 +15,8 @@
 [pull]
 	rebase = true
 [alias]
+  # Cloning
+  c = clone --recursive
   # Status
   s = status
   # Committing
