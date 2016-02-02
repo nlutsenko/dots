@@ -79,3 +79,10 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Install the theme for iTerm
 open "${HOME}/.dotfiles/themes/Dusk.itermcolors"
+
+###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
