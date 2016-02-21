@@ -71,16 +71,6 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 ###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
-# Install the theme for iTerm
-open "${HOME}/.dotfiles/themes/Dusk.itermcolors"
-
-###############################################################################
 # Photos                                                                      #
 ###############################################################################
 
