@@ -1,6 +1,7 @@
 line_length: 140
-file_length: 500
+file_length: 600
 opt_in_rules:
   - empty_count
 disabled_rules:
+  - todo
   - cyclomatic_complexity
