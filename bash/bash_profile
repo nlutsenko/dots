@@ -41,6 +41,7 @@ __git_feature() {
   fi
 }
 alias feature=__git_feature
+source ~/.dotfiles/git/github-pr.sh
 complete -o default -o nospace -F _git g
 
 # cd
