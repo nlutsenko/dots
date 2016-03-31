@@ -4,16 +4,5 @@ if [[ ! `uname` == 'Darwin' ]]; then
 fi
 
 # Copy fonts
-{
-  pushd ~/.dotfiles/font/; setdiffA=(*); popd
-  pushd ~/Library/Fonts/; setdiffB=(*); popd
-  setdiff
-} >/dev/null
-
-if (( ${#setdiffC[@]} > 0 )); then
-  e_header "Copying fonts (${#setdiffC[@]})"
-  for f in "${setdiffC[@]}"; do
-    e_arrow "$f"
-    cp "~/.dotfiles/font/$f" ~/Library/Fonts/
-  done
-fi
+e_header "Copying fonts (${#setdiffC[@]})"
+cp -f $HOME/.dotfiles/font/* $HOME/Library/Fonts 
