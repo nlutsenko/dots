@@ -76,3 +76,10 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
+# Xcode
+###############################################################################
+
+# Show build duration
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
