@@ -6,3 +6,4 @@ disabled_rules:
   - todo
   - cyclomatic_complexity
   - type_name
+  - conditional_binding_cascade
