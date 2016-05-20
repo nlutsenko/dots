@@ -66,3 +66,5 @@ fi
 
 . ~/.dotfiles/bash/completion/common
 . ~/.dotfiles/bash/completion/rake
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
