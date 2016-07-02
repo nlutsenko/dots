@@ -2,6 +2,7 @@ line_length: 140
 file_length: 600
 opt_in_rules:
   - empty_count
+  - missing_docs
 disabled_rules:
   - todo
   - cyclomatic_complexity
