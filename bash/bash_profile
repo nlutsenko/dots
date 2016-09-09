@@ -64,6 +64,11 @@ if [ -f ~/.profile ]; then
   source ~/.profile
 fi
 
+# Private Only
+if [ -f ~/.dotfiles-private/bash_profile ]; then
+  source ~/.dotfiles-private/bash_profile
+fi
+
 . ~/.dotfiles/bash/completion/common
 . ~/.dotfiles/bash/completion/rake
 
