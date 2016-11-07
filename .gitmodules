@@ -2,3 +2,6 @@
 	path = dotbot
 	url = git@github.com:anishathalye/dotbot.git
 	branch = master
+[submodule "powerline/src"]
+	path = powerline/src
+	url = git@github.com:banga/powerline-shell.git
