@@ -48,6 +48,27 @@ alias feature=__git_feature
 source ~/.dotfiles/git/github-pr.sh
 complete -o default -o nospace -F _git g
 
+# Xcode
+## Many thanks to @orta
+__openx(){
+  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+  then
+    echo "Opening workspace"
+    open *.xcworkspace
+    return
+  else
+    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+    then
+      echo "Opening project"
+      open *.xcodeproj
+      return
+    else
+      echo "Nothing found"
+    fi
+  fi
+}
+alias openx=__openx
+
 # cd
 ## src
 _cdsrc() { cd $HOME/src/$@ ;}
