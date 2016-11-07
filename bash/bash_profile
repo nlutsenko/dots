@@ -17,6 +17,14 @@ alias pr='hub pull-request -o'
 
 alias ramdisk='diskutil erasevolume HFS+ "RAMDisk" `hdiutil attach -nomount ram://4718592`'
 
+# Powerline
+function _update_ps1() {
+  PS1="$($HOME/.dotfiles/powerline/powerline-shell.py $? 2> /dev/null)"
+}
+if [ "$TERM" != "linux" ]; then
+  PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
 # git
 ## Alias
 alias g='git'
@@ -27,12 +35,6 @@ alias dotfiles='git -C ~/.dotfiles/'
 if [ -f ~/.dotfiles/git/git-bash.sh ]; then
   . ~/.dotfiles/git/git-bash.sh
 fi
-## Command prompt with branch name
-export GIT_PS1_SHOWUPSTREAM="verbose"
-export GIT_PS1_SHOWDIRTYSTATE="blah"
-export GIT_PS1_SHOWCOLORHINTS="blah"
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"; __git_ps1 "\u:\w" "\\\$ "'
-source ~/.dotfiles/git/git-prompt.sh
 ## Branching
 __git_feature() {
   exists=`git show-ref refs/heads/$1`
