@@ -5,3 +5,6 @@
 [submodule "powerline/src"]
 	path = powerline/src
 	url = git@github.com:banga/powerline-shell.git
+[submodule "zsh/src"]
+	path = zsh/src
+	url = git://github.com/robbyrussell/oh-my-zsh.git
