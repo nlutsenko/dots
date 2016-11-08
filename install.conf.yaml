@@ -1,6 +1,7 @@
 - clean: ['~']
 - link:
     ~/.bash_profile: bash/bash_profile
+    ~/.zshrc: zsh/zshrc
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
     ~/.gemrc: ruby/gemrc

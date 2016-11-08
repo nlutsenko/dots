@@ -1,0 +1,100 @@
+# zsh
+## Setup
+export ZSH=$HOME/.dotfiles/zsh/src
+source $ZSH/oh-my-zsh.sh
+## Alias
+alias zshrc='mate -w $HOME/.zshrc && source $HOME/.zshrc'
+
+# Basic
+unset HISTFILE
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='rmate -w'
+else
+  export EDITOR='mate -w'
+fi
+
+function o() {
+  z $1 && open .
+}
+
+# $PATH
+export PATH=/usr/local/bin:$PATH
+
+# Ruby & RVM
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Alias
+alias desktop='cd ~/Desktop/$1'
+alias ls='ls -AlGfhgvo'
+alias pr='hub pull-request -o'
+
+# Powerline
+function powerline_precmd() {
+    PS1="$(~/.dotfiles/powerline/powerline-shell.py $? --shell zsh 2> /dev/null)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
+
+# git
+source ~/.dotfiles/git/github-pr.sh
+## Alias
+alias g='git'
+alias master='git checkout master'
+alias cleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+
+# Xcode
+## Many thanks to @orta
+openx(){
+  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+  then
+    echo "Opening workspace"
+    open *.xcworkspace
+    return
+  else
+    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+    then
+      echo "Opening project"
+      open *.xcodeproj
+      return
+    else
+      echo "Nothing found"
+    fi
+  fi
+}
+
+# cd
+## src
+_cdsrc() { cd $HOME/src/$@ ;}
+alias src=_cdsrc
+_completesrc () {
+  local srcdir=$HOME/src
+  local cur=${COMP_WORDS[$COMP_CWORD]}
+  local prev=${COMP_WORDS[COMP_CWORD-1]}
+
+  COMPREPLY=( $( compgen -d $srcdir/$cur | sed "s|$HOME/src/||" ) )
+}
+
+# Local Only
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
+
+# Private Only
+if [ -f ~/.dotfiles-private/bash_profile ]; then
+  source ~/.dotfiles-private/bash_profile
+fi
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
