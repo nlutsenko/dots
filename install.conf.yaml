@@ -9,6 +9,10 @@
     ~/Library/Developer/Xcode/UserData/FontAndColorThemes/nlutsenko-Dusk.xccolortheme: 
       create: true
       path: themes/Dusk.dvtcolortheme
+    ~/Library/Developer/Xcode/UserData/CodeSnippets:
+      create: true
+      force: true
+      path: xcode-snippets
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
   - [~/.dotfiles/osx.sh, Updating OS X preferences...]
