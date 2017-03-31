@@ -120,6 +120,9 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # Show build duration
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 
+# Default to number of concurrent tasks to number of cores.
+defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
+
 ###############################################################################
 # Safari
 ###############################################################################
