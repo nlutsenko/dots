@@ -9,6 +9,7 @@ export PAGER='less -KFX'
 ## Alias
 alias zshrc='mate -w $HOME/.zshrc && source $HOME/.zshrc'
 alias appstore-reset-server="sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL"
+alias cat=ccat
 
 # Basic
 unset HISTFILE
