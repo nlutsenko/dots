@@ -12,6 +12,11 @@ alias zshrc='mate -w $HOME/.zshrc && source $HOME/.zshrc'
 alias appstore-reset-server="sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL"
 alias cat=ccat
 
+# HomeBrew
+# Turn-off Analytic, sorry, hate being tracked
+export HOMEBREW_NO_ANALYTICS=1
+
+
 # Basic
 unset HISTFILE
 
