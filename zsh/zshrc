@@ -40,6 +40,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Alias
 alias desktop='cd ~/Desktop/$1'
 alias ls='ls -AlGfhgvo'
+alias ll='exa -lha'
 alias pr='hub pull-request -o'
 
 # Powerline
