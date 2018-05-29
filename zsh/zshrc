@@ -45,6 +45,7 @@ alias desktop='cd ~/Desktop/$1'
 alias ls='ls -AlGhgvo'
 alias ll='exa -lha'
 alias pr='hub pull-request -o'
+alias imgcat='~/.dotfiles/zsh/img_cat.sh'
 
 # Powerline
 function powerline_precmd() {
