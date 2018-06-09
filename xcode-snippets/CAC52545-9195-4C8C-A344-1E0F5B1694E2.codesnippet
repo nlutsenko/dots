@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>///--------------------------------------
-#pragma mark - &lt;#Section#&gt;
+/// MARK: - &lt;#Section#&gt;
 ///--------------------------------------</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>CAC52545-9195-4C8C-A344-1E0F5B1694E2</string>
