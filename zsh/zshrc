@@ -115,3 +115,18 @@ if [ -f ~/.dotfiles-private/bash_profile ]; then
 fi
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export FBANDROID_DIR=/Users/nlutsenko/fbsource/fbandroid
+alias quicklog_update=/Users/nlutsenko/fbsource/fbandroid/scripts/quicklog/quicklog_update.sh
+alias qlu=quicklog_update
+
+# added by setup_fb4a.sh
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools
+
+#### FIG ENV VARIABLES ####
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+
+
