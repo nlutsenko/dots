@@ -34,7 +34,7 @@ function o() {
 export PATH=/usr/local/bin:$PATH
 
 # Python via Homebrew
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Ruby & RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -114,7 +114,6 @@ if [ -f ~/.dotfiles-private/bash_profile ]; then
   source ~/.dotfiles-private/bash_profile
 fi
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export FBANDROID_DIR=/Users/nlutsenko/fbsource/fbandroid
 alias quicklog_update=/Users/nlutsenko/fbsource/fbandroid/scripts/quicklog/quicklog_update.sh
 alias qlu=quicklog_update
@@ -128,5 +127,3 @@ export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}
 #### FIG ENV VARIABLES ####
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
-
-

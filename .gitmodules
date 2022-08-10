@@ -1,10 +1,10 @@
 [submodule "dotbot"]
 	path = dotbot
-	url = git@github.com:anishathalye/dotbot.git
+	url = https://github.com/anishathalye/dotbot.git
 	branch = master
 [submodule "powerline/src"]
 	path = powerline/src
-	url = git@github.com:banga/powerline-shell.git
+	url = https://github.com/banga/powerline-shell.git
 [submodule "zsh/src"]
 	path = zsh/src
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git
