@@ -1,6 +1,6 @@
 [user]
-	name = Nikita Lutsenko
-	email = nlutsenko@me.com
+  name = Nikita Lutsenko
+  email = git@nlutsenko.me
 [core]
   editor = mate -w
   whitespace = trailing-space,space-before-tab
