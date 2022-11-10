@@ -6,12 +6,12 @@
 	<string>pragmasection</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>///--------------------------------------
-// MARK: - &lt;#Section Name#&gt;
-///--------------------------------------</string>
+	<string>//--------------------------------------
+// MARK: - &lt;#Section#&gt;
+//--------------------------------------</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>9D1916B3-32A1-4F19-A24E-A1551B9C63EC</string>
 	<key>IDECodeSnippetLanguage</key>
