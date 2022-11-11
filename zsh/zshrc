@@ -34,7 +34,7 @@ function o() {
 export PATH=/usr/local/bin:$PATH
 
 # Python via Homebrew
-# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Ruby & RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
