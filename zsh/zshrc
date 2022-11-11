@@ -1,6 +1,9 @@
 # zsh
 ## Setup
-plugins=()
+plugins=(
+  git
+  brew
+)
 export ZSH=$HOME/.dotfiles/zsh/src
 source $ZSH/oh-my-zsh.sh
 export LSCOLORS="exfxcxdxbxegedabagacad"
@@ -68,7 +71,6 @@ fi
 # git
 source ~/.dotfiles/git/github-pr.sh
 ## Alias
-alias g='git'
 alias master='git checkout master'
 alias cleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
