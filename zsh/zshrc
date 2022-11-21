@@ -36,8 +36,11 @@ function o() {
 # $PATH
 export PATH=/usr/local/bin:$PATH
 
-# Python via Homebrew
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Homebrew in non-default location
+export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
+
+# pyenv
+export PATH=$(pyenv root)/shims:$PATH
 
 # Ruby & RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
