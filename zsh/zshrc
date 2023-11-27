@@ -11,9 +11,14 @@ export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30
 export LESS="-R"
 export PAGER='less -KFX'
 
+# Don't require escaping globbing characters in zsh.
+unsetopt nomatch
+
 # HomeBrew
 # Turn-off Analytic, sorry, hate being tracked
 export HOMEBREW_NO_ANALYTICS=1
+# Homebrew auto-update just once a week
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Basic
 unset HISTFILE
