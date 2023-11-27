@@ -10,15 +10,10 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export LESS="-R"
 export PAGER='less -KFX'
-## Alias
-alias zshrc='mate -w $HOME/.zshrc && source $HOME/.zshrc'
-alias appstore-reset-server="sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL"
-alias cat=ccat
 
 # HomeBrew
 # Turn-off Analytic, sorry, hate being tracked
 export HOMEBREW_NO_ANALYTICS=1
-
 
 # Basic
 unset HISTFILE
@@ -46,13 +41,6 @@ export PATH=$(pyenv root)/shims:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Alias
-alias desktop='cd ~/Desktop/$1'
-alias ls='ls -AlGhgvo'
-alias ll='exa -lha'
-alias pr='hub pull-request -o'
-alias imgcat='~/.dotfiles/zsh/img_cat.sh'
-
 # Powerline
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"
@@ -74,8 +62,6 @@ fi
 # git
 source ~/.dotfiles/git/github-pr.sh
 ## Alias
-alias master='git checkout master'
-alias cleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
 # Xcode
 ## Many thanks to @orta
@@ -97,18 +83,6 @@ openx(){
   fi
 }
 
-# cd
-## src
-_cdsrc() { cd $HOME/src/$@ ;}
-alias src=_cdsrc
-_completesrc () {
-  local srcdir=$HOME/src
-  local cur=${COMP_WORDS[$COMP_CWORD]}
-  local prev=${COMP_WORDS[COMP_CWORD-1]}
-
-  COMPREPLY=( $( compgen -d $srcdir/$cur | sed "s|$HOME/src/||" ) )
-}
-
 # Local Only
 if [ -f ~/.profile ]; then
   source ~/.profile
@@ -119,16 +93,5 @@ if [ -f ~/.dotfiles-private/bash_profile ]; then
   source ~/.dotfiles-private/bash_profile
 fi
 
-export FBANDROID_DIR=/Users/nlutsenko/fbsource/fbandroid
-alias quicklog_update=/Users/nlutsenko/fbsource/fbandroid/scripts/quicklog/quicklog_update.sh
-alias qlu=quicklog_update
-
-# added by setup_fb4a.sh
-export ANDROID_SDK=/opt/android_sdk
-export ANDROID_NDK_REPOSITORY=/opt/android_ndk
-export ANDROID_HOME=${ANDROID_SDK}
-export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools
-
-#### FIG ENV VARIABLES ####
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+# Aliases
+source ~/.dotfiles/zsh/aliases
