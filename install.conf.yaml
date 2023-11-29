@@ -18,5 +18,6 @@
       path: xcode-snippets
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
-  - [~/.dotfiles/osx.sh, Updating OS X preferences...]
-  - [~/.dotfiles/font/init.sh, Installing OS X font...]
+  - [~/.dotfiles/osx.sh, Updating macOS preferences...]
+  - [~/.dotfiles/font/init.sh, Installing macOS font...]
+  - [~/.dotfiles/font/init.sh, Running Setting Scripts...]
