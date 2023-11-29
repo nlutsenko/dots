@@ -16,6 +16,10 @@
       create: true
       force: true
       path: xcode-snippets
+    ~/Library/Application Support/TextMate/Managed/Bundles/Themes.tmBundle/Themes/Dusk.tmTheme:
+      create: true
+      force: true
+      path: themes/Dusk.tmTheme
 - shell:
   - [git submodule update --init --recursive, Installing submodules...]
   - [~/.dotfiles/osx.sh, Updating macOS preferences...]

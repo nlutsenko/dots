@@ -6,7 +6,7 @@ fi
 # Warn that some commands will not be run if the script is not run as root.
 if [[ $EUID -ne 0 ]]; then
   RUN_AS_ROOT=false
-  printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n" | fold -s -w 80
+  printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n"
 else
   RUN_AS_ROOT=true
   # Update existing `sudo` timestamp until `.osx` has finished
@@ -289,9 +289,15 @@ defaults write com.apple.commerce AutoUpdate -bool true
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
-# iTerm.                                                                      #
+# iTerm                                                                       #
 ###############################################################################
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
+###############################################################################
+# TextMate                                                                    #
+###############################################################################
+
+# Setup theme to Dusk
+defaults write com.macromates.TextMate darkModeThemeUUID 0856F700-08F4-4900-B113-0B1580C15727
