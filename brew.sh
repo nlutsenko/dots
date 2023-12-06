@@ -1,20 +1,8 @@
 #!/usr/bin/env bash
 
-if ! which brew > /dev/null; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! command -v brew >/dev/null; then
+  echo "Installing homebrew"
+	install_script=$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+	ruby -e "${install_script}"
+	unset install_script
 fi
-
-# Make sure we’re using the latest Homebrew.
-brew update
-
-# Upgrade any installed formulae.
-brew upgrade --all
-
-# Necessities
-brew install carthage
-brew install go
-brew install git
-
-# Cleanup
-brew cleanup
-brew prune
