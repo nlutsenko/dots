@@ -9,10 +9,9 @@ fi
 
 # Warn that some commands will not be run if the script is not run as root.
 if [[ ${EUID} -ne 0 ]]; then
-	RUN_AS_ROOT=false
-	printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n"
+	echo "Requires root to succeed."
+	exit 1
 else
-	RUN_AS_ROOT=true
 	# Update existing `sudo` timestamp until `.osx` has finished
 	while true; do
 		sudo -n true
@@ -246,7 +245,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 
 # Default to number of concurrent tasks to number of cores.
-defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks $(sysctl -n hw.ncpu)
+defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks "$(sysctl -n hw.ncpu)"
 
 ###############################################################################
 # Safari
