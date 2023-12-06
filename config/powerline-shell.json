@@ -1,12 +1,5 @@
 {
-  "segments": [
-    "ssh",
-    "cwd",
-    "read_only",
-    "git",
-    "jobs",
-    "root"
-  ],
+  "segments": ["ssh", "cwd", "read_only", "git", "jobs", "root"],
   "cwd": {
     "mode": "plain"
   },
