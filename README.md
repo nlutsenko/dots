@@ -1,4 +1,3 @@
-dots
-====
+# dots
 
 Configuration files...
