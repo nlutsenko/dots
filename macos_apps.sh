@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Script that installs applications
+# Script that installs macOS apps
 
 ## Check if we are running on macOS
 if [[ $(uname || true) != 'Darwin' ]]; then

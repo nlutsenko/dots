@@ -22,6 +22,6 @@
       path: themes/Dusk.tmTheme
 - shell:
     - [git submodule update --init --recursive, Installing submodules...]
-    - [~/.dotfiles/brew.sh, Installing homebrew...]
+    - [~/.dotfiles/macos_brew.sh, Installing homebrew...]
     - [sudo ~/.dotfiles/macos_preferences.sh, Updating macOS preferences...]
-    - [~/.dotfiles/apps.sh, Installing macOS apps...]
+    - [~/.dotfiles/macos_apps.sh, Installing macOS apps...]
