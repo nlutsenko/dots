@@ -23,5 +23,5 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules...]
     - [~/.dotfiles/brew.sh, Installing homebrew...]
-    - [~/.dotfiles/osx.sh, Updating macOS preferences...]
+    - [sudo ~/.dotfiles/macos_preferences.sh, Updating macOS preferences...]
     - [~/.dotfiles/apps.sh, Installing macOS apps...]

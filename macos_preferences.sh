@@ -1,16 +1,24 @@
-# OSX-only stuff. Abort if not OSX.
-if [[ ! `uname` == 'Darwin' ]]; then
-  return
+#!/usr/bin/env bash
+#
+# Script to check some annoying defaults
+
+## Check if we are running on macOS
+if [[ $(uname || true) != 'Darwin' ]]; then
+	return
 fi
 
 # Warn that some commands will not be run if the script is not run as root.
-if [[ $EUID -ne 0 ]]; then
-  RUN_AS_ROOT=false
-  printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n"
+if [[ ${EUID} -ne 0 ]]; then
+	RUN_AS_ROOT=false
+	printf "Certain commands will not be run without sudo privileges. To run as root, run the same command prepended with 'sudo', for example: $ sudo $0\n\n"
 else
-  RUN_AS_ROOT=true
-  # Update existing `sudo` timestamp until `.osx` has finished
-  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+	RUN_AS_ROOT=true
+	# Update existing `sudo` timestamp until `.osx` has finished
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done 2>/dev/null &
 fi
 
 ###############################################################################
@@ -238,7 +246,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 
 # Default to number of concurrent tasks to number of cores.
-defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
+defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks $(sysctl -n hw.ncpu)
 
 ###############################################################################
 # Safari
@@ -250,7 +258,6 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
 
 ###############################################################################
 # Mail                                                                        #
@@ -268,7 +275,6 @@ defaults write com.apple.appstore InAppReviewEnabled -int 0
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
-
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
