@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 - create:
     - ~/.config/powerline-shell
 - link:
@@ -9,7 +9,7 @@
     ~/.ruby-version: ruby/ruby-version
     ~/.swiftlint.yml: swiftlint.yml
     ~/.config/powerline-shell/config.json: config/powerline-shell.json
-    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/nlutsenko-Dusk.xccolortheme: 
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes/nlutsenko-Dusk.xccolortheme:
       create: true
       path: themes/Dusk.dvtcolortheme
     ~/Library/Developer/Xcode/UserData/CodeSnippets:
