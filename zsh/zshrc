@@ -40,7 +40,9 @@ export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 
 # pyenv
-export PATH=$(pyenv root)/shims:$PATH
+if command -v pyenv >/dev/null; then
+  export PATH=$(pyenv root)/shims:$PATH
+fi
 
 # Ruby & RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -48,7 +50,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Powerline
 function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
+  PS1="$(powerline-shell --shell zsh $?)"
 }
 
 function install_powerline_precmd() {
@@ -61,7 +63,7 @@ function install_powerline_precmd() {
 }
 
 if [ "$TERM" != "linux" -a -x "$(command -v powerline-shell)" ]; then
-    install_powerline_precmd
+  install_powerline_precmd
 fi
 
 # git
@@ -70,15 +72,13 @@ source ~/.dotfiles/git/github-pr.sh
 
 # Xcode
 ## Many thanks to @orta
-openx(){
-  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
-  then
+openx() {
+  if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"; then
     echo "Opening workspace"
     open *.xcworkspace
     return
   else
-    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
-    then
+    if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"; then
       echo "Opening project"
       open *.xcodeproj
       return
