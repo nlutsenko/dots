@@ -41,7 +41,8 @@ export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 
 # pyenv
 if command -v pyenv >/dev/null; then
-  export PATH=$(pyenv root)/shims:$PATH
+  export PATH=$(pyenv root)/bin:$PATH
+  eval "$(pyenv init -)"
 fi
 
 # Ruby & RVM
