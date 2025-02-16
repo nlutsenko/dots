@@ -39,6 +39,9 @@ export PATH=/usr/local/bin:$PATH
 # Homebrew in non-default location
 export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 
+# pipx (if any)
+export PATH="$PATH:$HOME/.local/bin"
+
 # pyenv
 if command -v pyenv >/dev/null; then
   export PATH=$(pyenv root)/bin:$PATH
