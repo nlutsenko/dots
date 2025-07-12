@@ -45,13 +45,12 @@
           ],
           "foreground": "#193549",
           "powerline_symbol": "\ue0b0",
+          "style": "powerline",
           "properties": {
-            "fetch_stash_count": true,
             "fetch_status": true
           },
-          "style": "powerline",
-          "template": " {{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "type": "git"
+          "template": "{{ if .Working.Changed }} \uea68 \uf046 {{ .Working.String }}{{ end }} ",
+          "type": "sapling"
         },
         {
           "background": "#33DD2D",
