@@ -42,6 +42,9 @@ export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 # pipx (if any)
 export PATH="$PATH:$HOME/.local/bin"
 
+# posh
+export PATH="$PATH:$HOME/.dotfiles/posh/bin"
+
 # pyenv
 if command -v pyenv >/dev/null; then
   export PATH=$(pyenv root)/bin:$PATH
@@ -52,23 +55,8 @@ fi
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Powerline
-function powerline_precmd() {
-  PS1="$(powerline-shell --shell zsh $?)"
-}
-
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" -a -x "$(command -v powerline-shell)" ]; then
-  install_powerline_precmd
-fi
+# Oh My Posh
+eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/config/posh.json)"
 
 # git
 source ~/.dotfiles/git/github-pr.sh
