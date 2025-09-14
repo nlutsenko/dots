@@ -39,7 +39,7 @@ export PATH=/usr/local/bin:$PATH
 # Homebrew in non-default location
 export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 
-# pipx (if any)
+# Local Binaries
 export PATH="$PATH:$HOME/.local/bin"
 
 # posh
