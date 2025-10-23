@@ -21,7 +21,23 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # Basic
-unset HISTFILE
+# Big shared history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=2000000
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+
+# Merge history before each prompt
+autoload -Uz add-zsh-hook
+history_merge() { fc -R; }   # fc -R == history -n
+add-zsh-hook precmd history_merge
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='rmate -w'
@@ -92,3 +108,9 @@ fi
 
 # Aliases
 source ~/.dotfiles/zsh/aliases
+
+# added by setup_fb4a.sh
+export ANDROID_SDK=/opt/android_sdk
+export ANDROID_NDK_REPOSITORY=/opt/android_ndk
+export ANDROID_HOME=${ANDROID_SDK}
+export PATH=${PATH}:${ANDROID_SDK}/emulator:${ANDROID_SDK}/tools:${ANDROID_SDK}/tools/bin:${ANDROID_SDK}/platform-tools
