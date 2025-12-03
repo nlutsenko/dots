@@ -42,7 +42,7 @@ add-zsh-hook precmd history_merge
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='rmate -w'
 else
-  export EDITOR='mate -w'
+  export EDITOR='subl -w'
 fi
 
 function o() {
