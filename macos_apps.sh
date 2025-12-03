@@ -27,17 +27,8 @@ mas install 1529448980
 ### Tailscale
 mas install 1475387142
 
-### Facebook Messenger
-mas install 1480068668
-
 ### Telegram
 mas install 747648890
-
-### Tick Tick
-mas install 966085870
-
-### Agenda
-mas install 1287445660
 
 # Direct Downloads
 
