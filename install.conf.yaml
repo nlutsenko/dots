@@ -20,6 +20,10 @@
       create: true
       force: true
       path: themes/Dusk.tmTheme
+    ~/Library/Application Support/Sublime Text/Packages/User:
+      create: true
+      force: true
+      path: sublime
 - shell:
     - [git submodule update --init --recursive, Installing submodules...]
     - [~/.dotfiles/macos_brew.sh, Installing homebrew...]
