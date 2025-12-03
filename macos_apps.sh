@@ -87,14 +87,6 @@ function _install_app {
 	fi
 }
 
-## Notion
-
-_install_app \
-	"https://www.notion.so/desktop/mac-universal/download" \
-	"/Applications" \
-	"Notion" \
-	"dmg"
-
 ## VS Code
 
 _install_app \
@@ -102,14 +94,6 @@ _install_app \
 	"/Applications" \
 	"Visual Studio Code" \
 	"zip"
-
-## TextMate
-
-_install_app \
-	"https://api.textmate.org/downloads/release?os=10.12" \
-	"/Applications" \
-	"TextMate" \
-	"tar"
 
 ## iTerm
 
