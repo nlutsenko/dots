@@ -122,7 +122,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#009fbeff</string>
+				<string>#82C057</string>
 			</dict>
 		</dict>
 		<dict>
@@ -177,6 +177,39 @@
 				<string>#ffffffff</string>
 			</dict>
 		</dict>
+    <dict>
+      <key>name</key>
+      <string>Attribute</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#566A7C</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
+      <string>Attribute</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#566A7C</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
+      <string>Attribute</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#566A7C</string>
+      </dict>
+    </dict>
 	</array>
 	<key>uuid</key>
 	<string>0856F700-08F4-4900-B113-0B1580C15727</string>
