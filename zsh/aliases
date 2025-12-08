@@ -16,6 +16,9 @@ alias b='buck1'
 alias b1='buck1'
 alias b2='buck2'
 
+# Editor
+alias mate='subl'
+
 # git
 alias git-master='git checkout master'
 alias git-cleanup='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
