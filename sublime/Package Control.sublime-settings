@@ -7,5 +7,6 @@
 	[
 		"Package Control",
 		"rsub",
+		"Starlark",
 	],
 }
