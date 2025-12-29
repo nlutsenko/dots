@@ -1,4 +1,5 @@
-alias zshrc='mate -w $HOME/.zshrc && source $HOME/.zshrc'
+# Aliases
+alias zshrc='subl -w $HOME/.zshrc && source $HOME/.zshrc'
 
 # Folders
 alias desktop='cd ~/Desktop/$1'
@@ -12,8 +13,7 @@ alias ll='exa -lha'
 alias imgcat='~/.dotfiles/zsh/img_cat.sh'
 
 # buck
-alias b='buck1'
-alias b1='buck1'
+alias b='buck2'
 alias b2='buck2'
 
 # Editor
