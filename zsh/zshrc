@@ -32,3 +32,4 @@ if [[ -n "$_zsh_profile" ]]; then
     source "$HOME/.dotfiles-private/zsh/rc.d/${_zsh_profile}.zsh"
   fi
 fi
+export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"

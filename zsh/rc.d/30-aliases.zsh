@@ -7,7 +7,12 @@ _cdsrc() { cd $HOME/src/$@ ;}
 alias src=_cdsrc
 
 # GNU
-alias cat=ccat
+# Only override cat when the colorize plugin actually loaded; otherwise leave
+# `cat` alone so non-interactive shells (or boxes missing pygmentize/chroma)
+# still have a working `cat`.
+if (( $+functions[colorize_cat] )); then
+  alias cat=ccat
+fi
 alias ls='ls -AlGhgvo'
 alias ll='exa -lha'
 alias imgcat='~/.dotfiles/zsh/img_cat.sh'

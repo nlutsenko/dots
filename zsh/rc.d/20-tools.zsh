@@ -17,3 +17,8 @@ fi
 if command -v oh-my-posh >/dev/null; then
   eval "$(oh-my-posh init zsh --config "$HOME/.dotfiles/config/posh.json")"
 fi
+
+# Colorize plugin (defines ccat / cless via colorize_cat / colorize_less)
+if [[ -r "$DOTFILES/zsh/src/plugins/colorize/colorize.plugin.zsh" ]]; then
+  source "$DOTFILES/zsh/src/plugins/colorize/colorize.plugin.zsh"
+fi
