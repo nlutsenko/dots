@@ -22,7 +22,11 @@ alias b='buck2'
 alias b2='buck2'
 
 # Editor
-alias mate='subl'
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias mate='subl'
+else
+  alias mate='rmate -W'
+fi
 
 # git
 alias git-master='git checkout master'
