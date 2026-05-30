@@ -25,7 +25,7 @@ alias b2='buck2'
 if [[ "$OSTYPE" == darwin* ]]; then
   alias mate='subl'
 else
-  alias mate='rmate -W'
+  alias mate='rmate'
 fi
 
 # git
